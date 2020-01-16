@@ -1,0 +1,33 @@
+
+.consultation{
+    min-height: 680px;
+    background: url("../../img/request/bg2.png") center center/cover no-repeat;
+    padding: 100px 0 92px 0;
+    &_wrapper{
+        display: flex;
+        justify-content: left;
+    }
+    &__descr{
+        margin-top: 80px;
+        max-width: 396px;
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 300;
+    }
+}
+
+@media (max-width: 1024px){
+    .consultation{
+        .title_mobile_center{
+            text-align: center;
+        }
+        &__descr{
+            text-align: center;
+        }
+        &_wrapper{
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+}

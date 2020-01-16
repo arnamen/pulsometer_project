@@ -8,7 +8,27 @@
     margin: 0 auto;
 }
 
+.title{
+    width: 100%;
+    text-align: center;
+    color: #0d0d0d;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    &_white{
+        color: #ffffff;
+    }
+    &_left{
+        text-align: left;
+    }
+    &_mobile_center{
+        text-align: none;
+    }
+}
+
 @import "../blocks/promo";
 @import "../blocks/header.scss";
 @import "../blocks/buttons";
 @import "../blocks/advantages";
+@import "../blocks/consultation.scss";
+@import "../blocks/forms";
