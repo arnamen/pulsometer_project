@@ -2,10 +2,14 @@
     padding: 81px 0 82px 0;
     &__inner{
         position: relative;
-        width: 750px;
+        width: 100%;
         margin: 0 auto;
+        img{
+            max-width: 100%;
+        }
     }
     .prev, .next{
+        display: none;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
