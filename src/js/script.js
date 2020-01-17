@@ -1,4 +1,4 @@
-$(document).ready(function(){
+/* $(document).ready(function(){
     $('.carousel__inner').slick({
         // adaptiveHeight: true,
         prevArrow: '<button type="button" class="slick-prev"><img src="/src/img/carousel/chevron-left-solid.png"></button>',
@@ -34,4 +34,22 @@ $(document).ready(function(){
           // instead of a settings object
         ]
     });
+}); */
+
+const slider = tns({
+  container: '.carousel__inner',
+  items: 1,
+  slideBy: 'page',
+  autoplay: false,
+  controls: false,
+  nav: false
 });
+
+document.querySelector('.next').onclick = function () {
+  slider.goTo('next');
+};
+
+
+document.querySelector('.prev').onclick = function () {
+  slider.goTo('prev');
+};
