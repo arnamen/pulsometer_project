@@ -29,3 +29,28 @@
         font-weight: 400;
     }
 }
+
+@media (max-width: 768px){
+    .reviews{
+        &__review{
+            font-size: 13px;
+        }
+    }
+}
+
+@media (max-width: 550px){
+    .reviews{
+        &_item{
+            flex-direction: column;
+        }
+        &__photo{
+            text-align: center;
+        }
+        &__name{
+            text-align: center;
+        }
+        &__achievements{
+            text-align: center;
+        }
+    }
+}
