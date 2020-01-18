@@ -14,6 +14,17 @@
         font-size: 20px;
         font-weight: 300;
     }
+    .error{
+        outline: none;
+        border: 1px solid red;
+        text-align: center;
+    }
+    label.error{
+        color: white;
+        border: none;
+        text-align: center;
+        margin-bottom: 15px;
+    }
 }
 
 @media (max-width: 1024px){

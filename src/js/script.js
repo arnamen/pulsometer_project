@@ -111,4 +111,29 @@ $('.button_mini').each(function(i){
     $('.overlay, #order').fadeIn();
   })
 })
+
+function validateForms(form){
+  $(form).validate({
+    rules: {
+      name: "required",
+      phone:"required",
+      email: {
+        required: true,
+        email: true
+      }
+    },
+    messages: {
+      name: "Введите своё имя",
+      phone: "Введите свой номер телефона",
+      email: {
+        required: "Введите свою почту",
+        email: "неправильно введён адрес почты"
+      }
+    }
+  });
+}
+
+validateForms('#order form');
+validateForms('#consultation-form');
+validateForms('#consultation form');
 });
