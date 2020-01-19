@@ -27,6 +27,13 @@
     }
 }
 
+.google-map{
+    width:100%;
+    height:630px;
+    border:0;
+}
+
+@import "../base/animations";
 @import "../blocks/promo";
 @import "../blocks/header.scss";
 @import "../blocks/buttons";
@@ -38,4 +45,4 @@
 @import "../blocks/reviews";
 @import "../blocks/footer";
 @import "../blocks/modal";
-@import "../blocks/_pageup.scss"
+@import "../blocks/_pageup.scss";

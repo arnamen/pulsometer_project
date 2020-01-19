@@ -29,4 +29,15 @@
             text-transform: uppercase;
         }
     }
+    &__icon{
+        &_animated{
+            animation-name: heartbeat;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-play-state: paused;
+            &:hover{
+                animation-play-state: running;;
+            }
+        }
+    }
 }
