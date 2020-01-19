@@ -1,40 +1,4 @@
-/* $(document).ready(function(){
-    $('.carousel__inner').slick({
-        // adaptiveHeight: true,
-        prevArrow: '<button type="button" class="slick-prev"><img src="/src/img/carousel/chevron-left-solid.png"></button>',
-        nextArrow: '<button type="button" class="slick-next"><img src="/src/img/carousel/chevron-right-solid.png"></button>',
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
-              infinite: true,
-              dots: true
-            }
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-            }
-          }
-          // You can unslick at a given breakpoint now by adding:
-          // settings: "unslick"
-          // instead of a settings object
-        ]
-    });
-}); */
+
 
 const slider = tns({
   container: '.carousel__inner',
@@ -65,22 +29,6 @@ document.querySelector('.prev').onclick = function () {
    
   });
   })(jQuery);
-
-/*   $('.catalog-item__link').each(function(i){
-    $(this).on('click', function(e){
-      e.preventDefault();
-      $('.catalog-item__content').eq(i).toggleClass('catalog-item__content_active');
-      $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active');
-    })
-  })
-
-$('.catalog-item__back').each(function(i){
-  $(this).on('click', function(e){
-    e.preventDefault();
-    $('.catalog-item__content').eq(i).toggleClass('catalog-item__content_active');
-    $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active');
-  })
-}) */
 
 function toggleSlide(item){
   $(item).each(function(i){
@@ -136,4 +84,39 @@ function validateForms(form){
 validateForms('#order form');
 validateForms('#consultation-form');
 validateForms('#consultation form');
+
+
+$('input[name=phone]').mask("+7 (999) 999-99-99");
+
+$('form').submit(function(e) {
+  e.preventDefault();
+  $.ajax({
+      type: "POST",
+      url: "mailer/smart.php",
+      data: $(this).serialize()
+  }).done(function() {
+      $(this).find("input").val("");
+      $('#consultation, #order').fadeOut();
+      $('.overlay, #thanks').fadeIn();
+
+      $('form').trigger('reset');
+  });
+  return false;
+});
+
+//smooth scroll and page up
+$(window).scroll(function(){
+  if($(this).scrollTop() > 1600){
+    $('.pageup').fadeIn();
+  } else{
+    $('.pageup').fadeOut();
+  }
+})
+
+$("a[href^='#']").click(function(){
+  var _href = $(this).attr("href");
+  $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+  return false;
+});
+
 });
